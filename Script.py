@@ -15,7 +15,7 @@ I Am PowerFul Auto Filter With Link Shortener. Just Add Me To Your Group And Enj
 👤 Total Users: <code>{}</code>
 👥 Total Chats: <code>{}</code>
 ✨ Used Storage: <code>{}</code>
-🗂 Free Storage: <code>{}</code>
+🗂 Total Storage: <code>{}</code>
 🚀 Bot Uptime: <code>{}</code>"""
 
     OPENAI_TXT = """<b>Find Solution To Any Question With ChatGPT. 
