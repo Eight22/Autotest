@@ -21,6 +21,6 @@ async def ask_question(client, message):
             ],
             model="gpt-3.5-turbo"
         )
-        await msg.edit(f"🦹 User: {message.from_user.mention}\n💬 Query: <code>{text}</code>\n⚡ Results:\n<code>{response.choices[0].message.content}</code>")
+        await msg.edit(f"💬 Query: <code>{text}</code>\n🦹 User: {message.from_user.mention}\n⚡ Results:\n<code>{response.choices[0].message.content}</code>")
     except Exception as e:
         await msg.edit(f'Error - <code>{e}</code>')
