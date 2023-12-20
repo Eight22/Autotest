@@ -189,9 +189,12 @@ async def stats(bot, message):
     files = await Media.count_documents()
     users = await db.total_users_count()
     chats = await db.total_chat_count()
-    size = get_size(await db.get_db_size())
+    size = await db.get_db_size()
+    free = 536870912 - size
     uptime = get_readable_time(time.time() - temp.START_TIME)
-    await msg.edit(script.STATUS_TXT.format(files, users, chats, size, uptime))    
+    size = get_size(size)
+    free = get_size(free)
+    await msg.edit(script.STATUS_TXT.format(files, users, chats, size, free, uptime))    
     
 @Client.on_message(filters.command('settings'))
 async def settings(client, message):
