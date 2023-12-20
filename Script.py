@@ -12,12 +12,11 @@ class script(object):
 ★ ID: <code>5493832202</code>
 ★ Country: Sri Lanka 🇱🇰"""
 
-    STATUS_TXT = """🗃️ Total Files: <code>{}</code>
-👪 Total Users: <code>{}</code>
-💬 Total Chats: <code>{}</code>
-📂 Used Storage: <code>{}</code>
-🗂 Free Storage: <code>{}</code>
-⏰ Uptime: <code>{}</code>"""
+    STATUS_TXT = """🗂 Total Files: <code>{}</code>
+👤 Total Users: <code>{}</code>
+👥 Total Chats: <code>{}</code>
+✨ Used Storage: <code>{}</code>
+🚀 Bot Uptime: <code>{}</code>"""
 
     OPENAI_TXT = """<b>Find Solution To Any Question With ChatGPT. 
   
