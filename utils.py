@@ -229,9 +229,9 @@ def get_wish():
     time = datetime.now(tz)
     now = time.strftime("%H")
     if now < "12":
-        status = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞"
+        status = "Good Morning 🌞"
     elif now < "18":
-        status = "ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ 🌗"
+        status = "Good AfterNoon 🌗"
     else:
-        status = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
+        status = "Good Evening 🌘"
     return status
