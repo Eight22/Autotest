@@ -1,6 +1,5 @@
 class script(object):
-    START_TXT = """<b>ʜᴇʏ {}, <i>{}</i>
-    
+    START_TXT = """<b>Hey {}, <i>{}</i>
 I Am PowerFul Auto Filter With Link Shortener. Just Add Me To Your Group And Enjoy... ♻️</b>"""
 
     MY_ABOUT_TXT = """👰 Name : <a href=https://t.me/PostQutoBot>Kajal Shukla</a>
