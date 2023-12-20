@@ -21,7 +21,7 @@ I Am PowerFul Auto Filter With Link Shortener. Just Add Me To Your Group And Enj
     OPENAI_TXT = """<b>Find Solution To Any Question With ChatGPT. 
   
  Commands And Usage: 
-  /OpenAI Your Question  
+  /Ask Your Question  
   
  Note: 
  * This Feature Work Only Support Group.</b>"""
