@@ -26,10 +26,10 @@ async def aks_downloader(bot, query):
     watch = f"{URL}watch/{msg.id}"
     download = f"{URL}download/{msg.id}"
     btn= [[
-        InlineKeyboardButton("Watch Online", url=watch),
-        InlineKeyboardButton("Fast Download", url=download)
+        InlineKeyboardButton("⚡ Watch Online", url=watch),
+        InlineKeyboardButton("🚀 Fast Download", url=download)
     ],[
-        InlineKeyboardButton('❌ Close ❌', callback_data='close_data')
+        InlineKeyboardButton('🙅 Close', callback_data='close_data')
     ]]
     await query.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup(btn)
@@ -62,13 +62,13 @@ async def give_filter(client, message):
                         if message.reply_to_message:
                             try:
                                 sent_msg = await message.reply_to_message.forward(member.user.id)
-                                await sent_msg.reply_text(f"#Attention\n★ User: {message.from_user.mention}\n★ Group: {message.chat.title}\n\n★ <a href={message.reply_to_message.link}>Go to message</a>", disable_web_page_preview=True)
+                                await sent_msg.reply_text(f"#Attention\n🦹 User: {message.from_user.mention}\n👨‍👩‍👧‍👧 Group: {message.chat.title}\n\n💬 <a href={message.reply_to_message.link}>Go to message</a>", disable_web_page_preview=True)
                             except:
                                 pass
                         else:
                             try:
                                 sent_msg = await message.forward(member.user.id)
-                                await sent_msg.reply_text(f"#Attention\n★ User: {message.from_user.mention}\n★ Group: {message.chat.title}\n\n★ <a href={message.link}>Go to message</a>", disable_web_page_preview=True)
+                                await sent_msg.reply_text(f"#Attention\n🦹 User: {message.from_user.mention}\n👨‍👩‍👧‍👧 Group: {message.chat.title}\n\n💬 <a href={message.link}>Go to message</a>", disable_web_page_preview=True)
                             except:
                                 pass
             hidden_mentions = (f'[\u2064](tg://user?id={user_id})' for user_id in admins)
@@ -84,7 +84,7 @@ async def give_filter(client, message):
         elif '#request' in message.text.lower():
             if message.from_user.id in ADMINS:
                 return
-            await client.send_message(LOG_CHANNEL, f"#Request\n★ User: {message.from_user.mention}\n★ Group: {message.chat.title}\n\n★ Message: {re.sub(r'#request', '', message.text.lower())}")
+            await client.send_message(LOG_CHANNEL, f"#Request\n🦹 User: {message.from_user.mention}\n👨‍👩‍👧‍👧 Group: {message.chat.title}\n\n💬 Message: {re.sub(r'#request', '', message.text.lower())}")
             await message.reply_text("Request sent!")
             return
             
@@ -108,7 +108,7 @@ async def give_filter(client, message):
         btn = await is_subscribed(client, message, settings['fsub']) # This func is for custom fsub channels
         if btn:
             btn.append(
-                [InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")]
+                [InlineKeyboardButton("♻️ Request Again", callback_data="grp_checksub")]
             )
             reply_markup = InlineKeyboardMarkup(btn)
             k = await message.reply_photo(
@@ -228,7 +228,7 @@ async def next_page(bot, query):
             ]
         )
     btn.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     try:
         await query.message.edit_text(cap + files_link + del_msg, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -427,7 +427,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if btn:
             await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and request again.", show_alert=True)
             btn.append(
-                [InlineKeyboardButton("🔁 Try Again 🔁", callback_data=f"pm_checksub#{mc}")]
+                [InlineKeyboardButton("♻️ Try Again", callback_data=f"pm_checksub#{mc}")]
             )
             await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
             return
@@ -443,7 +443,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if btn:
             await query.answer(f"Hello {query.from_user.first_name},\nPlease join my updates channel and request again.", show_alert=True)
             btn.append(
-                [InlineKeyboardButton("🔁 Request Again 🔁", callback_data="grp_checksub")]
+                [InlineKeyboardButton("♻️ Request Again", callback_data="grp_checksub")]
             )
             await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
             return
@@ -690,7 +690,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('⛓ Link' if settings["links"] else '🧲 Button', callback_data=f'setgs#links#{settings["links"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('❌ Close ❌', callback_data='close_data')
+                    InlineKeyboardButton('🙅 Close', callback_data='close_data')
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -876,7 +876,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="🚸 ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇs 🚸", callback_data="buttons")]
         )
     btn.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -1000,7 +1000,7 @@ async def advantage_spell_chok(message):
         for movie in movies
     ]
     buttons.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 Hello {message.from_user.mention},\n\nI couldn't find the <b>'{search}'</b> you requested.\nSelect if you meant one of these? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
     await asyncio.sleep(300)
