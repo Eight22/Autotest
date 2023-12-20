@@ -66,11 +66,11 @@ async def start(client, message):
         if mc != 'subscribe':
             try:
                 btn.append(
-                    [InlineKeyboardButton("🔁 Try Again 🔁", callback_data=f"pm_checksub#{mc}")]
+                    [InlineKeyboardButton("♻️ Try Again", callback_data=f"pm_checksub#{mc}")]
                 )
             except ButtonDataInvalid:
                 btn.append(
-                    [InlineKeyboardButton("🔁 Try Again 🔁", url=f"https://t.me/{temp.U_NAME}?start={mc}")]
+                    [InlineKeyboardButton("♻️ Try Again", url=f"https://t.me/{temp.U_NAME}?start={mc}")]
                 )
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -122,9 +122,9 @@ async def start(client, message):
                 file_caption=file.caption
             )   
             btn = [[
-                InlineKeyboardButton("✛ Watch & Download ✛", callback_data=f"stream#{file.file_id}")
+                InlineKeyboardButton("⚡ Watch & Download 🚀", callback_data=f"stream#{file.file_id}")
             ],[
-                InlineKeyboardButton('⁉️ Close ⁉️', callback_data='close_data')
+                InlineKeyboardButton('🙅 Close', callback_data='close_data')
             ]]
             await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -157,9 +157,9 @@ async def start(client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("✛ Watch & Download ✛", callback_data=f"stream#{file_id}")
+        InlineKeyboardButton("⚡ Watch & Download 🚀", callback_data=f"stream#{file_id}")
     ],[
-        InlineKeyboardButton('⁉️ Close ⁉️', callback_data='close_data')
+        InlineKeyboardButton('🙅 Close', callback_data='close_data')
     ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -234,7 +234,7 @@ async def settings(client, message):
             InlineKeyboardButton('Result Page', callback_data=f'setgs#links#{settings["links"]}#{str(grp_id)}'),
             InlineKeyboardButton('⛓ Link' if settings["links"] else '🧲 Button', callback_data=f'setgs#links#{settings["links"]}#{str(grp_id)}')
         ],[
-            InlineKeyboardButton('❌ Close ❌', callback_data='close_data')
+            InlineKeyboardButton('🙅 Close', callback_data='close_data')
         ]]
         await message.reply_text(
             text=f"Change your settings for <b>'{message.chat.title}'</b> as your wish. ⚙",
