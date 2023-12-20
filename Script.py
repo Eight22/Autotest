@@ -40,7 +40,7 @@ You Can Use This Feature To Search GitHub Repo.
     
     STICKER_TXT = """<b>You Can Use This Feature To Find Any Stickers ID.  
    
- ⭕ How To Use
+ 🚀 How To Use
  ◉ /stickerid  Reply To Any Sticker With This Commands
  </b>"""
     
