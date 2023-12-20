@@ -9,11 +9,6 @@ ai_client = OpenAI(api_key=OPENAI_API)
 async def ask_question(client, message):
     if len(OPENAI_API) == 0:
         return await message.reply("OPENAI_API is empty")
-    if message.chat.id != SUPPORT_GROUP:
-        btn = [[
-            InlineKeyboardButton('Support Group', url=SUPPORT_LINK)
-        ]]
-        return await message.reply("This command only working in support group.", reply_markup=InlineKeyboardMarkup(btn))
     try:
         text = message.text.split(" ", 1)[1]
     except:
